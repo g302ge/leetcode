@@ -30,7 +30,7 @@ mod tests {
     use crate::l94::TreeNode;
 
     #[test]
-    fn example_test(){
+    fn leetcode94(){
         let root = Some(Rc::new(RefCell::new(TreeNode::new(1))));
         // if ref keyword is not exists the compiler will complain the partially moved of root
         if let Some(ref node) = root {

@@ -41,7 +41,7 @@ mod tests{
 
 
     #[test]
-    fn test_case(){
+    fn leetcode95(){
         let result = vec![vec![1,2,3], vec![1, 3, 2], vec![2, 1, 3], vec![3, 1, 2], vec![3, 2, 1]];
 
         let generates = l95::Solution::gen_trees(3);
