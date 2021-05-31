@@ -1,6 +1,7 @@
 mod utils;
 mod l94;
 mod l95;
+mod l96;
 
 use std::rc::Rc;
 use std::cell::RefCell;
