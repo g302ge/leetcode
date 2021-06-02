@@ -14,7 +14,7 @@ pub struct Solution;
 impl Solution {
     
     pub fn recover_tree(root: &mut Option<Rc<RefCell<TreeNode>>>) {
-        while Some(ref current) = root {
+        if let Some(ref _current) = root {
             // current is Rc reference need to clone to the next iteration 
 
         }     
