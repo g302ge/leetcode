@@ -14,7 +14,7 @@ impl Solution {
         let current = queue.clone();
         let mut level: Vec<i32> = vec![];
         for n in current{
-          level.push(n.as_ref().borrow().val);
+          level.push(n.borrow().val);
           if let Some(ref left) = n.borrow().left {
             queue.push_back(left.clone());
           }
