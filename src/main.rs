@@ -14,6 +14,8 @@ mod l99;
 mod l100;
 #[allow(dead_code)]
 mod l101;
+#[allow(dead_code)]
+mod l102;
 
 use std::rc::Rc;
 use std::cell::RefCell;
