@@ -18,8 +18,6 @@ impl Solution {
         traverse(root, &mut counter);
         counter
     }
-
-    // TODO: implement the traverse not recesive method to calculate the result using stack 
 }
 
 #[cfg(test)]
