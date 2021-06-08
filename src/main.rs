@@ -19,6 +19,9 @@ mod l102;
 #[allow(dead_code)]
 mod l103;
 
+#[allow(dead_code)]
+mod l106;
+
 
 #[allow(dead_code)]
 mod l108;
