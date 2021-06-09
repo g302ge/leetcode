@@ -46,7 +46,7 @@ mod tests {
   use crate::l103::Solution;
 
   #[test]
-  fn leetcode102(){
+  fn leetcode103(){
     let root = Some( Rc::new(RefCell::new(
       TreeNode{
         val: 3,
