@@ -41,6 +41,22 @@ mod l144;
 use std::rc::Rc;
 use std::cell::RefCell;
 
+#[derive(Debug, PartialEq, Eq, Clone)]
+pub struct ListNode {
+    pub val: i32,
+    pub next: Option<Box<ListNode>>
+}
+
+impl ListNode {
+    #[inline]
+    fn new(val: i32) -> ListNode {
+        ListNode{
+            val,
+            next: None
+        }
+    }
+}
+
 #[derive(Clone, Debug)]
 pub struct TreeNode {
     pub val: i32,
