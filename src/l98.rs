@@ -1,6 +1,6 @@
-use std::rc::Rc;
-use std::cell::RefCell;
 use crate::TreeNode;
+use std::cell::RefCell;
+use std::rc::Rc;
 
 pub struct Solution;
 
@@ -14,31 +14,31 @@ impl Solution {
             // because the Rc is clone and increase the pointer count and pass it to the function
             Some(node) => {
                 let current = node.borrow();
-                current.val < max &&
-                    current.val > min &&
-                    Solution::check_vaild_bst(current.left.clone(), min, current.val) &&
-                    Solution::check_vaild_bst(current.right.clone(), current.val, max)
-            },
-            None => true
+                current.val < max
+                    && current.val > min
+                    && Solution::check_vaild_bst(current.left.clone(), min, current.val)
+                    && Solution::check_vaild_bst(current.right.clone(), current.val, max)
+            }
+            None => true,
         }
     }
 }
 
 #[cfg(test)]
 mod tests {
-    use std::rc::Rc;
-    use std::cell::RefCell;
     use crate::l98;
     use crate::TreeNode;
+    use std::cell::RefCell;
+    use std::rc::Rc;
 
     #[test]
-    fn leetcode98(){
+    fn leetcode98() {
         let root = Rc::new(RefCell::new(TreeNode::new(2)));
         let left = Rc::new(RefCell::new(TreeNode::new(1)));
         let right = Rc::new(RefCell::new(TreeNode::new(3)));
         root.borrow_mut().left = Some(left);
         root.borrow_mut().right = Some(right);
-        
+
         let vaild = l98::Solution::is_vaild_bst(Some(root));
         assert_eq!(vaild, true);
     }

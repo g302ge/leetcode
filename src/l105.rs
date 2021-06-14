@@ -1,6 +1,6 @@
-use std::rc::Rc;
-use std::cell::RefCell;
 use crate::TreeNode;
+use std::cell::RefCell;
+use std::rc::Rc;
 
 pub struct Solution;
 
@@ -8,16 +8,20 @@ impl Solution {
     pub fn build_tree(preorder: Vec<i32>, inorder: Vec<i32>) -> Option<Rc<RefCell<TreeNode>>> {
         if preorder.len() == 0 {
             return None;
-        } 
+        }
         let length = inorder.len();
         let val = preorder[0];
         let index = inorder.iter().position(|&x| x == val).unwrap();
         let mut root = TreeNode::new(val);
         if index > 0 {
-            root.left = Self::build_tree(preorder[1..index+1].to_vec(), inorder[0..index].to_vec());
+            root.left =
+                Self::build_tree(preorder[1..index + 1].to_vec(), inorder[0..index].to_vec());
         }
         if index < length - 1 {
-            root.right = Self::build_tree(preorder[index+1..].to_vec(), inorder[index+1..].to_vec());
+            root.right = Self::build_tree(
+                preorder[index + 1..].to_vec(),
+                inorder[index + 1..].to_vec(),
+            );
         }
         Some(Rc::new(RefCell::new(root)))
     }
@@ -25,8 +29,8 @@ impl Solution {
 
 #[cfg(test)]
 mod tests {
-    use crate::l94;
     use crate::l105;
+    use crate::l94;
 
     #[test]
     fn leetcode105() {

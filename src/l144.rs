@@ -1,6 +1,6 @@
-use std::rc::Rc;
-use std::cell::RefCell;
 use crate::TreeNode;
+use std::cell::RefCell;
+use std::rc::Rc;
 
 pub struct Solution;
 
@@ -11,7 +11,7 @@ impl Solution {
         result
     }
 
-    fn traversal(root: Option<Rc<RefCell<TreeNode>>>, result: &mut Vec<i32>){
+    fn traversal(root: Option<Rc<RefCell<TreeNode>>>, result: &mut Vec<i32>) {
         if let Some(ref node) = root {
             result.push(node.borrow().val);
             Self::traversal(node.borrow().left.clone(), result);
@@ -22,30 +22,22 @@ impl Solution {
 
 #[cfg(test)]
 mod tests {
-    use std::rc::Rc;
-    use std::cell::RefCell;
-    use crate::TreeNode;
     use crate::l144::Solution;
+    use crate::TreeNode;
+    use std::cell::RefCell;
+    use std::rc::Rc;
 
     #[test]
-    fn leetcode144(){
-        let tree = Some(Rc::new(
-                    RefCell::new(
-                            TreeNode {
-                                val: 1,
-                                left: None,
-                                right: Some(Rc::new(
-                                            RefCell::new(
-                                                    TreeNode {
-                                                        val: 2,
-                                                        left: Some(Rc::new(RefCell::new(TreeNode::new(3)))),
-                                                        right: None
-                                                    }
-                                                )
-                                        ))
-                            }
-                        )
-                ));
+    fn leetcode144() {
+        let tree = Some(Rc::new(RefCell::new(TreeNode {
+            val: 1,
+            left: None,
+            right: Some(Rc::new(RefCell::new(TreeNode {
+                val: 2,
+                left: Some(Rc::new(RefCell::new(TreeNode::new(3)))),
+                right: None,
+            }))),
+        })));
         let result = Solution::preorder_traversal(tree);
         assert_eq!(result, vec![1, 2, 3]);
     }

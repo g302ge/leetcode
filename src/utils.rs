@@ -1,13 +1,15 @@
-
-// leetcode test helper function 
-
+// leetcode test helper function
 
 // deeply check vector equality
 pub fn vec_deep_eq<T: std::cmp::PartialEq>(left: &Vec<T>, right: &Vec<T>) -> bool {
     if left.len() != right.len() {
         return false;
     }
-    left.iter().zip(right.iter()).filter(|&(a, b)| a == b).count() == left.len()
+    left.iter()
+        .zip(right.iter())
+        .filter(|&(a, b)| a == b)
+        .count()
+        == left.len()
 }
 
 #[cfg(test)]
