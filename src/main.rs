@@ -1,11 +1,6 @@
 #[allow(dead_code)]
 mod l1;
 #[allow(dead_code)]
-mod l2;
-#[allow(dead_code)]
-mod utils;
-
-#[allow(dead_code)]
 mod l100;
 #[allow(dead_code)]
 mod l101;
@@ -13,6 +8,22 @@ mod l101;
 mod l102;
 #[allow(dead_code)]
 mod l103;
+#[allow(dead_code)]
+mod l105;
+#[allow(dead_code)]
+mod l106;
+#[allow(dead_code)]
+mod l108;
+#[allow(dead_code)]
+mod l110;
+#[allow(dead_code)]
+mod l114;
+#[allow(dead_code)]
+mod l144;
+#[allow(dead_code)]
+mod l2;
+#[allow(dead_code)]
+mod l3;
 #[allow(dead_code)]
 mod l94;
 #[allow(dead_code)]
@@ -23,23 +34,8 @@ mod l96;
 mod l98;
 #[allow(dead_code)]
 mod l99;
-
 #[allow(dead_code)]
-mod l105;
-#[allow(dead_code)]
-mod l106;
-
-#[allow(dead_code)]
-mod l108;
-
-#[allow(dead_code)]
-mod l110;
-
-#[allow(dead_code)]
-mod l114;
-
-#[allow(dead_code)]
-mod l144;
+mod utils;
 
 use std::cell::RefCell;
 use std::rc::Rc;
