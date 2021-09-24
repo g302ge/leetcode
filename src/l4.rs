@@ -13,7 +13,7 @@ impl Solution {
             let mid2 = total / 2 - 1;
             let median = Solution::get_kth_num(&nums1, &nums2, mid1 + 1)
                 + Solution::get_kth_num(&nums1, &nums2, mid2 + 1);
-            return (median / 2) as f64;
+            return (median as f64) / 2;
         }
     }
 
